@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import {
   View,
   Text,
@@ -6,11 +7,38 @@ import {
   TouchableOpacity,
   TextInput
 } from 'react-native';
+import { addTodo } from '../actions';
 
-const TodoScreen = () => {
+const TodoScreen = props => {
+  const [text, setText] = useState('메모를 적어보세요');
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    dispatch(addTodo(text));
+  };
+  const todoList = props.todos;
+  // console.log(todoList);
+
   return (
-    <View style={styles.container}>
-      <TextInput style={styles.textInput} />
+    <View>
+      <TextInput
+        style={styles.textInput}
+        value={text}
+        onChangeText={text => setText(text)}
+      />
+      <TouchableOpacity onPress={() => handleSubmit()}>
+        <Text>입력</Text>
+      </TouchableOpacity>
+      <View>
+        {todoList &&
+          todoList.map((todo, idx) =>
+            <View key={idx}>
+              <Text>
+                {todo.text}
+              </Text>
+            </View>
+          )}
+      </View>
     </View>
   );
 };
@@ -29,4 +57,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TodoScreen;
+const mapStateToProps = state => ({
+  todos: state
+});
+
+export default connect(mapStateToProps, {
+  addTodo
+})(TodoScreen);

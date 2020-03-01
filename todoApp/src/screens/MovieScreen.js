@@ -5,11 +5,14 @@ import axios from 'axios';
 const MovieScreen = () => {
   const [movieList, setMovieList] = useState([]);
 
-  useEffect(async () => {
-    const result = await axios.get(
-      'https://yts.mx/api/v2/list_movies.json?limit=50'
-    );
-    setMovieList(result['data']['data']['movies']);
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const result = await axios.get(
+        'https://yts.mx/api/v2/list_movies.json?limit=50'
+      );
+      setMovieList(result['data']['data']['movies']);
+    };
+    fetchMovies();
   }, []);
 
   return (
@@ -21,10 +24,9 @@ const MovieScreen = () => {
           </View>
         : null}
       {movieList &&
-        movieList.map(movie => {
-          console.log(movie.title);
+        movieList.map((movie, index) => {
           return (
-            <View>
+            <View key={index}>
               <Text>
                 {movie.title}
               </Text>
