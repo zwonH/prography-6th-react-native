@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import todos from './src/reducers';
+import todos from './src/reducers/todos';
 
 import HomeScreen from './src/screens/HomeScreen';
 import TodoScreen from './src/screens/TodoScreen';

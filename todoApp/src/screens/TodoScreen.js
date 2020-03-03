@@ -1,41 +1,34 @@
 import React, { useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  TextInput
-} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import AddTodo from '../containers/AddTodo';
 import { addTodo } from '../actions';
 
 const TodoScreen = props => {
-  const [text, setText] = useState('메모를 적어보세요');
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleSubmit = () => {
-    dispatch(addTodo(text));
-  };
   const todoList = props.todos;
   // console.log(todoList);
 
   return (
     <View>
-      <TextInput
-        style={styles.textInput}
-        value={text}
-        onChangeText={text => setText(text)}
-      />
-      <TouchableOpacity onPress={() => handleSubmit()}>
-        <Text>입력</Text>
-      </TouchableOpacity>
+      <AddTodo />
+
       <View>
         {todoList &&
-          todoList.map((todo, idx) =>
-            <View key={idx}>
-              <Text>
-                {todo.text}
-              </Text>
+          todoList.map(todo =>
+            <View key={todo.id} style={{ flexDirection: 'row' }}>
+              <TouchableOpacity>
+                <Text>
+                  {todo.text}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text>수정</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text>삭제</Text>
+              </TouchableOpacity>
             </View>
           )}
       </View>
@@ -48,12 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  textInput: {
-    width: '80%',
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1
   }
 });
 
