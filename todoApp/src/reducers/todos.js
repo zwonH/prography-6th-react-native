@@ -1,7 +1,7 @@
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      console.log('메모 추가' + action.id);
+      console.log('add' + action.id);
       return [
         ...state,
         {
@@ -11,20 +11,6 @@ const todos = (state = [], action) => {
           editable: false
         }
       ];
-    // case 'UPDATE_TODO':
-    //   const id = action.id;
-    //   const text = action.text;
-    //   const completed = action.completed;
-
-    //   let newState = JSON.parse(JSON.stringify(state));
-    //   for (let i = 0; i < newState.length; i++) {
-    //     if (id === newState[i]['id']) {
-    //       newState[i]['text'] = text;
-    //       newState[i]['completed'] = completed;
-    //       break;
-    //     }
-    //   }
-    //   return newState;
 
     case 'TOGGLE_TODO':
       console.log('toggle' + action.id);

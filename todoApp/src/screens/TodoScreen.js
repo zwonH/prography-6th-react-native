@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import AddTodo from '../containers/AddTodo';
 import TodoList from '../containers/TodoList';
 

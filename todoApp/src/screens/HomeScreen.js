@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -22,25 +21,34 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '$mainC'
   },
   button: {
-    width: '70%',
-    height: 100,
+    width: '60%',
+    aspectRatio: 1,
     borderRadius: 50,
-    backgroundColor: 'blue',
+    backgroundColor: '$mainC',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 10
+    margin: 10,
+    shadowColor: '#bbb5d3',
+    shadowOffset: { width: 15, height: 10 },
+    shadowOpacity: 0.9,
+    shadowRadius: 15,
+    elevation: 1
   },
   txtButton: {
     color: 'white',
-    fontWeight: '800',
-    fontSize: 20
+    fontWeight: '900',
+    fontSize: '25rem',
+    textAlign: 'center',
+    lineHeight: '32rem',
+    fontFamily: '$jose'
   }
 });
 

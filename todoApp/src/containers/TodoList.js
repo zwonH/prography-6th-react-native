@@ -31,7 +31,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo, editTodo, updateTodo }) =>{
                 value={editedInput}
                 onChangeText={editedInput => setEditedInput(editedInput)}
               />
-              <TouchableOpacity onPress={() => updateTodo(todo.id, editedInput)}>
+              <TouchableOpacity onPress={() => editedInput&&updateTodo(todo.id, editedInput)}>
                 <Text>완료</Text>
               </TouchableOpacity>
             </View>

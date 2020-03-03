@@ -20,6 +20,7 @@
 		8652A97564C875CB6E4A84C1 /* libPods-todo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 740A53F3E2BD29B012BCCF77 /* libPods-todo-tvOSTests.a */; };
 		DCB4103CA87427F213D3AD35 /* libPods-todo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C3CD32F6BD97872467C3FE /* libPods-todo.a */; };
 		DE48950485452AEC21D7C3B1 /* libPods-todo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E9E71362269FD15606ED59 /* libPods-todo-tvOS.a */; };
+		950AEDD4C47C407EA23EE5D2 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 497A8BD798DF4CC9A4DED9B5 /* JosefinSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F31C3B048B7BAB500B8C6881 /* Pods-todoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todoTests.debug.xcconfig"; path = "Target Support Files/Pods-todoTests/Pods-todoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F774FB2BE26F3A35ECD4450D /* Pods-todoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todoTests.release.xcconfig"; path = "Target Support Files/Pods-todoTests/Pods-todoTests.release.xcconfig"; sourceTree = "<group>"; };
+		497A8BD798DF4CC9A4DED9B5 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; name = "JosefinSans-Bold.ttf"; path = "../assets/fonts/JosefinSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				3065D423F024358BCC0A7E7D /* Pods */,
+				28A4412AF96E42A9B88FC72A /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +200,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		28A4412AF96E42A9B88FC72A /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				497A8BD798DF4CC9A4DED9B5 /* JosefinSans-Bold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -285,7 +297,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +350,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				950AEDD4C47C407EA23EE5D2 /* JosefinSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
