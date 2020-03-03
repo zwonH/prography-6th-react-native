@@ -7,7 +7,8 @@ const todos = (state = [], action) => {
         {
           id: action.id,
           text: action.text,
-          completed: false
+          completed: false,
+          editable: false
         }
       ];
     // case 'UPDATE_TODO':
@@ -35,6 +36,24 @@ const todos = (state = [], action) => {
     case 'DELETE_TODO':
       console.log('delete' + action.id);
       return state.filter(todo => todo.id !== action.id);
+
+    case 'EDIT_TODO':
+      console.log('edit' + action.id);
+      return state.map(
+        todo =>
+          todo.id === action.id
+            ? { ...todo, editable: true }
+            : { ...todo, editable: false }
+      );
+
+    case 'UPDATE_TODO':
+      console.log('update' + action.id);
+      return state.map(
+        todo =>
+          todo.id === action.id
+            ? { ...todo, editable: false, text: action.text }
+            : todo
+      );
 
     default:
       return state;
