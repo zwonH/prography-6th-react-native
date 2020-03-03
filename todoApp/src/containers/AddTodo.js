@@ -13,12 +13,14 @@ const AddTodo = ({ dispatch }) => {
   const [input, setInput] = useState('Write your memo');
 
   const handleSubmit = () => {
-    dispatch(addTodo(input));
+    input && dispatch(addTodo(input));
+    setInput('');
   };
 
   return (
     <View>
       <TextInput
+        clearTextOnFocus={true}
         style={styles.textInput}
         value={input}
         onChangeText={input => setInput(input)}
