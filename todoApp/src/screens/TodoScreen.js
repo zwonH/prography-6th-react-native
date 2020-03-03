@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import AddTodo from '../containers/AddTodo';
 import TodoList from '../containers/TodoList';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 const TodoScreen = () =>
   <View style={styles.container}>
@@ -9,9 +10,10 @@ const TodoScreen = () =>
     <TodoList />
   </View>;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '$mainC'
   }
 });
 

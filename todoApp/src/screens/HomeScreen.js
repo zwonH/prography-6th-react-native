@@ -40,7 +40,7 @@ const styles = EStyleSheet.create({
     shadowOffset: { width: 15, height: 10 },
     shadowOpacity: 0.9,
     shadowRadius: 15,
-    elevation: 1
+    elevation: 3
   },
   txtButton: {
     color: 'white',

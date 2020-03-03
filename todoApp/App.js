@@ -18,30 +18,31 @@ EStyleSheet.build({
   $rem: deviceWidth / 380,
   $mainC: '#D9D2F5',
   $pointC: 'white',
-  $jose: 'JosefinSans-Bold'
+  $darkC: '#6C6781',
+  $jose: 'JosefinSans-Bold',
+  $dW: deviceWidth
 });
 
 const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen
-            options={{
-              headerStyle: {
-                backgroundColor: EStyleSheet.value('$mainC'),
-                borderBottomWidth: 0,
-                shadowColor: 'transparent'
-              },
-              headerTintColor: EStyleSheet.value('$pointC'),
-              headerTitleStyle: {
-                fontFamily: EStyleSheet.value('$jose'),
-                fontSize: EStyleSheet.value('20rem')
-              }
-            }}
-            name="Home"
-            component={HomeScreen}
-          />
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: EStyleSheet.value('$mainC'),
+              borderBottomWidth: 0,
+              shadowColor: 'transparent'
+            },
+            headerTintColor: EStyleSheet.value('$pointC'),
+            headerTitleStyle: {
+              fontFamily: EStyleSheet.value('$jose'),
+              fontSize: EStyleSheet.value('20rem')
+            }
+          }}
+        >
+          <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Todo" component={TodoScreen} />
           <Stack.Screen name="Movie" component={MovieScreen} />
         </Stack.Navigator>
