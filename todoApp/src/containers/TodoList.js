@@ -1,23 +1,45 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ScrollView } from 'react-native';
+import {
+  ScrollView,
+  TouchableOpacity,
+  View,
+  Text,
+  StyleSheet
+} from 'react-native';
 
 import Todo from '../components/Todo';
-import { toggleTodo } from '../actions';
+import { toggleTodo, deleteTodo } from '../actions';
 
-const TodoList = ({ todos, toggleTodo }) =>
+const TodoList = ({ todos, toggleTodo, deleteTodo }) =>
   <ScrollView>
     {todos.map(todo =>
-      <Todo key={todo.id} {...todo} onPress={() => toggleTodo(todo.id)} />
+      <View style={styles.oneTodo} key={todo.id}>
+        <Todo {...todo} onPress={() => toggleTodo(todo.id)} />
+        <TouchableOpacity
+          onPress={() => {
+            deleteTodo(todo.id);
+          }}
+        >
+          <Text>삭제</Text>
+        </TouchableOpacity>
+      </View>
     )}
   </ScrollView>;
+
+const styles = StyleSheet.create({
+  oneTodo: {
+    flexDirection: 'row'
+  }
+});
 
 const mapStateToProps = state => ({
   todos: state
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+  toggleTodo: id => dispatch(toggleTodo(id)),
+  deleteTodo: id => dispatch(deleteTodo(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
