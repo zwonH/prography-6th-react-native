@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import AddTodo from '../containers/AddTodo';
 import TodoList from '../containers/TodoList';

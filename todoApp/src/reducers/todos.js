@@ -26,8 +26,10 @@ const todos = (state = [], action) => {
     //   return newState;
 
     case 'TOGGLE_TODO':
+      console.log('hi');
       return state.map(
-        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+        todo =>
+          todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
       );
 
     default:

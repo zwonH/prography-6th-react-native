@@ -1,14 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Todo = ({ onClick, completed, text }) =>
-  <View
-    onClick={onClick}
-    style={{ textDecoration: completed ? 'line-through' : 'none' }}
-  >
-    <Text>
+const Todo = ({ onPress, completed, text, id }) =>
+  <TouchableOpacity onPress={onPress}>
+    <Text style={{ textDecorationLine: completed ? 'line-through' : 'none' }}>
+      {id}
       {text}
+      {completed ? '트루' : '팔스'}
     </Text>
-  </View>;
+  </TouchableOpacity>;
 
 export default Todo;
